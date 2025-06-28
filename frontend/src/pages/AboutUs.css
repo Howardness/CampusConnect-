@@ -1,0 +1,71 @@
+/* Logo in top left */
+.about-header {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  z-index: 10;
+}
+
+.about-logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Background and layout */
+.about-wrapper {
+  background: linear-gradient(to bottom right, #0d1636, #1f2a48);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  line-height: 1.8;
+  animation: fadeIn 0.9s ease-in;
+  position: relative;
+}
+
+.about-wrapper h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #f7e702;
+}
+
+.about-wrapper p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-bottom: 16px;
+}
+
+.mission {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Back button styling */
+.back-button {
+  margin-top: 30px;
+  padding: 10px 22px;
+  background-color: white;
+  color: #0d1636;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #4dabf7;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

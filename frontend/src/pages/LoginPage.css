@@ -1,0 +1,108 @@
+/* LoginPage.css */
+
+/* Full-screen layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.login-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background: url('/dashboard-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Login Card */
+.login-card {
+  background-color: rgba(7, 10, 61, 0.07);
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: rgb(131, 60, 60);
+  text-align: center;
+}
+
+/* Logo styling */
+.login-logo {
+  width: 100px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 5px #f7e702);
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input styling */
+.login-input {
+  padding: 12px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f5f5f5;
+  color: #160a58;
+}
+
+.login-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f7e702;
+}
+
+.login-button {
+  padding: 10px 20px;
+  background-color: #0f114f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 
+    background 0.3s ease, 
+    transform 0.2s ease, 
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.login-button:hover {
+  background-color: #131c6d;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 16px rgba(0,0,0,0.3),
+    0 0 8px rgba(247, 230, 2, 0.6);
+}
+
+/* Register link as button */
+.register-link {
+  font-size: 0.9rem;
+  color: #f7e702;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: 
+    background 0.3s ease, 
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.register-link:hover {
+  background-color: rgba(247, 230, 2, 0.2);
+  color: #fff200;
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.2),
+    0 0 6px rgba(255, 242, 0, 0.7);
+  transform: translateY(-1px);
+}
+

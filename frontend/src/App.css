@@ -1,0 +1,41 @@
+/* src/pages/LoginPage.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.landing-container {
+  background: linear-gradient(to bottom, #0d1636, #1f2a48);
+  color: white;
+}
+
+section {
+  min-height: 100vh;
+  padding: 60px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #f1c40f;
+  color: #0d1636;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #d4ac0d;
+}

@@ -1,0 +1,131 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+/* Container */
+.appointment-container {
+  min-height: 100vh;
+  background-color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.appointment-wrapper {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.appointment-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.appointment-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.appointment-header p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}
+
+/* Form */
+.appointment-form {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+/* Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Inputs */
+.appointment-form input,
+.appointment-form select {
+  width: 100%;
+  padding: 16px;
+  background-color: #334155;
+  border: 1px solid #475569;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+}
+
+.appointment-form input::placeholder {
+  color: #94a3b8;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  background-color: #1e293b;
+}
+
+/* Select icon */
+.appointment-form select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Button */
+.submit-button {
+  width: 100%;
+  background-color: #d2db18;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.submit-button:hover {
+  background-color: #859026;
+}
+
+/* Footer */
+.appointment-footer {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.appointment-footer p {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.appointment-footer a {
+  color: #c8d20d;
+  text-decoration: none;
+}

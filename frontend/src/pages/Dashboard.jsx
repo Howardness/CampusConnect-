@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ViewTickets from "./ViewTickets";
 import './Dashboard.css';
+import CombinedView from "../components/CombinedView";
 
 export default function Dashboard() {
   const [hovered, setHovered] = useState(null);
@@ -59,7 +60,7 @@ export default function Dashboard() {
 
       {/* RIGHT SIDE */}
       <div className="dashboard-right">
-        <ViewTickets />
+         <CombinedView />
       </div>
     </div>
   );

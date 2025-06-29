@@ -118,7 +118,7 @@ export default function ReportIssue() {
                 </button>
               )}
               <button onClick={handleBack} className="back-button">
-                ← Back to Dashboard
+                ← Back 
               </button>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function ReportIssue() {
           <div className="report-wrapper">
 
             <button onClick={handleBack} className="back-button">
-              ← Back to Dashboard
+              ← Back 
             </button>
 
             <div className="report-header">

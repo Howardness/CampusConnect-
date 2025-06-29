@@ -14,35 +14,18 @@ export default function Ticket({ ticket, index, onDelete }) {
   };
 
   return (
-   <li className="ticket-item">
-  <div className="ticket-details-table">
-    <div className="label">Ticket #</div>
-    <div className="value">{index + 1}</div>
+    <li className="ticket-item">
+      <p><strong>Ticket #:</strong> {index + 1}</p>
+      <p><strong>Student ID:</strong> {ticket.studentId}</p>
+      <p><strong>Full Name:</strong> {ticket.fullName}</p>
+      <p><strong>Category:</strong> {ticket.category}</p>
+      <p><strong>Details:</strong> <em>{ticket.details}</em></p>
+      <p><strong>Submitted At:</strong> {ticket.submittedAt ? new Date(ticket.submittedAt).toLocaleString() : "N/A"}</p>
 
-    <div className="label">Student ID:</div>
-    <div className="value">{ticket.studentId}</div>
-
-    <div className="label">Full Name:</div>
-    <div className="value">{ticket.fullName}</div>
-
-    <div className="label">Category:</div>
-    <div className="value">{ticket.category}</div>
-
-    <div className="label">Details:</div>
-    <div className="value"><em>{ticket.details}</em></div>
-
-    <div className="label">Submitted At:</div>
-    <div className="value">
-      {ticket.submittedAt
-        ? new Date(ticket.submittedAt).toLocaleString()
-        : "N/A"}
-    </div>
-  </div>
-
-  <div className="ticket-actions">
-    <span className="edit-link" onClick={handleEdit}>Edit</span>
-    <span className="delete-link" onClick={confirmDelete}>Delete</span>
-  </div>
-</li>
+      <div className="ticket-actions">
+        <span className="edit-link" onClick={handleEdit}>Edit</span>
+        <span className="delete-link" onClick={confirmDelete}>Delete</span>
+      </div>
+    </li>
   );
 }

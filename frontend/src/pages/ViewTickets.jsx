@@ -40,18 +40,18 @@ export default function ViewTickets() {
 
   return (
     <div className="ticket-container">
-      <h2>View Tickets</h2>
+      <h2>Report Tickets</h2>
       <ul className="ticket-list">
         {tickets.map((ticket, index) => (
-  <Ticket
-    key={ticket.id}
-    ticket={ticket}
-    index={index} 
-    onDelete={handleDelete}
+       <Ticket
+         key={ticket.id}
+          ticket={ticket}
+           index={index} 
+          onDelete={handleDelete}
     
-  />
-))}
-      </ul>
+      />
+      ))}
+         </ul>
     </div>
-  );
-}
+     );
+  }

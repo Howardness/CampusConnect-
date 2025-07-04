@@ -1,9 +1,13 @@
 // src/pages/AboutUs.jsx
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import './AboutUs.css';
 
+
 export default function AboutUs() {
+    useEffect(() => {
+        document.title = "Campus Connect | About Us"
+      }, []);
   return (
     <div className="about-wrapper">
       {/* Logo Header */}

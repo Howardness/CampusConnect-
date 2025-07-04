@@ -14,18 +14,21 @@
 /* Background and layout */
 .about-wrapper {
   background: linear-gradient(to bottom right, #0d1636, #091639);
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 20px;
   color: white;
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
   line-height: 1.8;
   animation: fadeIn 0.9s ease-in;
   position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 .about-wrapper h2 {
@@ -52,8 +55,8 @@
 .back-button {
   margin-top: 30px;
   padding: 10px 22px;
-  background-color: white;
-  color: #0b122a;
+  background-color: rgb(36, 155, 207);
+  color: #cad4f5;
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
@@ -68,4 +71,9 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+@media (min-width: 1024px) {
+  .about-wrapper {
+    padding: 60px 100px;
+  }
 }

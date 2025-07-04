@@ -1,11 +1,14 @@
 // src/pages/Dashboard.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ViewTickets from "./ViewTickets";
 import './Dashboard.css';
 import CombinedView from "../components/CombinedView";
 
 export default function Dashboard() {
+    useEffect(() => {
+        document.title = "Campus Connect"
+      }, []);
   const [hovered, setHovered] = useState(null);
 
   return (

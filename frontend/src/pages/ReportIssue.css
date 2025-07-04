@@ -145,7 +145,6 @@ html, body {
   }
 }
 
-
 /* Inputs */
 .report-form input,
 .report-form select,
@@ -171,6 +170,36 @@ html, body {
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
   background-color: #1e293b;
 }
+.form-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.back-button.top {
+  background-color: transparent;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button.top:hover {
+  background-color: #475569;
+  color: white;
+}
+
+.form-header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
 
 /* Select Dropdown */
 .report-form select {
@@ -191,6 +220,28 @@ html, body {
   background-repeat: no-repeat;
   background-size: 16px;
   cursor: pointer;
+}
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.back-button {
+  background-color: #334155;
+  color: #f1f5f9;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #475569;
 }
 
 

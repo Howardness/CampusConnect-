@@ -1,4 +1,3 @@
-// src/components/CombinedView.jsx
 import React from "react";
 import ViewTickets from "../pages/ViewTickets";
 import ViewAppointments from "../pages/ViewAppointments";
@@ -6,10 +5,10 @@ import "./CombinedView.css";
 
 export default function CombinedView() {
   return (
+    <>
     <div className="combined-view">
       {/* Reported Tickets */}
       <div className="combined-column">
-       
         <ViewTickets />
       </div>
 
@@ -18,5 +17,6 @@ export default function CombinedView() {
         <ViewAppointments />
       </div>
     </div>
+    </>
   );
 }

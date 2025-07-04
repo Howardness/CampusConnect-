@@ -5,6 +5,7 @@ import "./ViewTickets.css";
 export default function ViewTickets() {
   const [tickets, setTickets] = useState([]);
   const [error, setError] = useState(null);
+  const [deleteMessage, setDeleteMessage] = useState("");
 
   const fetchTickets = () => {
     fetch("http://localhost:8080/api/tickets")
@@ -31,7 +32,9 @@ export default function ViewTickets() {
       method: "DELETE",
     })
       .then(() => {
-        setTickets(tickets.filter(ticket => ticket.id !== id));
+        setDeleteMessage("✅ Ticket deleted successfully.");
+        fetchTickets();
+        setTimeout(() => setDeleteMessage(""), 3000); // auto clear
       })
       .catch((err) => alert("Failed to delete: " + err.message));
   };
@@ -41,17 +44,29 @@ export default function ViewTickets() {
   return (
     <div className="ticket-container">
       <h2>Report Tickets</h2>
-      <ul className="ticket-list">
-        {tickets.map((ticket, index) => (
-       <Ticket
-         key={ticket.id}
-          ticket={ticket}
-           index={index} 
-          onDelete={handleDelete}
-    
-      />
-      ))}
-         </ul>
+
+      {/* ✅ Delete success message */}
+      {deleteMessage && (
+        <div className="delete-success-message">
+          {deleteMessage}
+          <button className="dismiss-btn" onClick={() => setDeleteMessage("")}>
+            ×
+          </button>
+        </div>
+      )}
+
+      <div className="ticket-scroll">
+        <ul className="ticket-list">
+          {tickets.map((ticket, index) => (
+            <Ticket
+              key={ticket.id}
+              ticket={ticket}
+              index={index}
+              onDelete={handleDelete}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
-     );
-  }
+  );
+}

@@ -1,16 +1,26 @@
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ConfirmDialog from "./ConfirmDialog"; 
 
 export default function Ticket({ ticket, index, onDelete }) {
   const navigate = useNavigate();
-
-  const confirmDelete = () => {
-    if (window.confirm("Are you sure you want to delete this ticket?")) {
-      onDelete(ticket.id);
-    }
-  };
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const handleEdit = () => {
     navigate("/report", { state: { ticket } });
+  };
+
+  const handleDeleteClick = () => {
+    setShowConfirm(true);
+  };
+
+  const handleConfirm = () => {
+    onDelete(ticket.id);
+    setShowConfirm(false);
+  };
+
+  const handleCancel = () => {
+    setShowConfirm(false);
   };
 
   return (
@@ -24,8 +34,16 @@ export default function Ticket({ ticket, index, onDelete }) {
 
       <div className="ticket-actions">
         <span className="edit-link" onClick={handleEdit}>Edit</span>
-        <span className="delete-link" onClick={confirmDelete}>Delete</span>
+        <span className="delete-link" onClick={handleDeleteClick}>Delete</span>
       </div>
+
+      {showConfirm && (
+        <ConfirmDialog
+          message="You want to delete?"
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+        />
+      )}
     </li>
   );
 }

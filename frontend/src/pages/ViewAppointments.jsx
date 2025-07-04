@@ -1,10 +1,13 @@
+// src/pages/ViewAppointments.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AppointmentList from '../components/AppointmentList';
 import './ViewAppointments.css';
 
 export default function ViewAppointments() {
   const [appointments, setAppointments] = useState([]);
   const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,16 +25,18 @@ export default function ViewAppointments() {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this appointment?")) return;
     try {
       const res = await fetch(`http://localhost:8080/api/appointments/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Delete failed");
-      fetchAppointments(); // Refresh
+
+      fetchAppointments();
+      setSuccessMessage("Appointment deleted successfully!");
+      setTimeout(() => setSuccessMessage(""), 3000); // Auto-clear after 3s
     // eslint-disable-next-line no-unused-vars
     } catch (err) {
-      alert("Error deleting appointment.");
+      setError("Error deleting appointment.");
     }
   };
 
@@ -39,27 +44,27 @@ export default function ViewAppointments() {
     navigate("/schedule-appointment", { state: { appointment } });
   };
 
-  if (error) return <div className="error-message">Error: {error}</div>;
-
   return (
     <div className="appointments-container">
       <h2>Appointments</h2>
-      <ul className="appointments-list">
-        {appointments.map((appt, index) => (
-          <li key={appt.id} className="appointment-item">
-            <p><strong>Appointment #:</strong> {index + 1}</p>
-            <p><strong>Student ID:</strong> {appt.studentNo}</p>
-            <p><strong>Full Name:</strong> {appt.fullName}</p>
-            <p><strong>Category:</strong> {appt.category}</p>
-            <p><strong>When:</strong> {new Date(appt.appointmentTime).toLocaleString()}</p>
 
-            <div className="appointment-actions">
-              <span className="edit-link" onClick={() => handleEdit(appt)}>Edit</span>
-              <span className="delete-link" onClick={() => handleDelete(appt.id)}>Delete</span>
-            </div>
-          </li>
-        ))}
-      </ul>
+      {successMessage && (
+        <div className="success-message">
+          {successMessage}
+        </div>
+      )}
+
+      {error && (
+        <div className="error-message">
+          Error: {error}
+        </div>
+      )}
+
+      <AppointmentList
+        appointments={appointments}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+      />
     </div>
   );
 }
